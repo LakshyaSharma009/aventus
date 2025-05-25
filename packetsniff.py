@@ -26,3 +26,5 @@ if __name__ == "__main__":
         sniff(iface=interface, prn=process_packet, store=False, filter="ip")
     except Exception as e:
         print(f"Error: {e}")
+        #pip3 install scapy
+
