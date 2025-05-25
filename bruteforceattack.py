@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime 
 
 DETECTION_THRESHOLD = 5 
-TIME_WINDOW = 300  # 5 minutes in seconds 
+TIME_WINDOW = 300  
 
 def parse_log_line(line): 
     pattern = re.compile(r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}).*Login failed for user.*from IP (?P<ip>\d+\.\d+\.\d+\.\d+)') 
@@ -25,7 +25,6 @@ def detect_brute_force(log_lines):
             if len(recent_attempts) >= DETECTION_THRESHOLD: 
                 print(f"Brute force detected from IP {ip} at {timestamp_str}") 
 
-# Example log lines (replace with actual log lines) 
 log_lines = [ 
     "2024-06-02 12:00:00 Login failed for user admin from IP 192.168.1.1", 
     "2024-06-02 12:00:30 Login failed for user admin from IP 192.168.1.1", 
@@ -34,5 +33,5 @@ log_lines = [
     "2024-06-02 12:02:00 Login failed for user admin from IP 192.168.1.1", 
 ] 
 
-# Detect brute force attempts 
+
 detect_brute_force(log_lines)
