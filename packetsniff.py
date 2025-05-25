@@ -27,4 +27,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {e}")
         #pip3 install scapy
+        #sudo python3 your_script.py
+
 
